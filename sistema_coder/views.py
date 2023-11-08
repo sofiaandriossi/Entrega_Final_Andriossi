@@ -16,7 +16,9 @@ def saludar_con_fecha(request):
     return respuesta_http
 
 def saludar_con_html(request):
-    contexto = {}
+    contexto = {"mi_nombre": "Sofía",
+                "profesores": ["Pedro","Mariano", "Ruben", "Luciano"],
+                "comision": "47780" ,}
     http_response = render(
         request=request,
         template_name='base.html',
