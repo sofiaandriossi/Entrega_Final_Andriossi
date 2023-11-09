@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block titulo %}
+<title>Coderhouse 47780 - Cursos</title>
+{% endblock titulo %}
+
+{% block contenido %}
+<h1 style="color:orange;">
+  Cursos
+</h1>
+<a href="{% url 'lista_cursos' %}">Ver todos</a>
+<a href="{% url 'crear_curso' %}">Crear curso</a>
+</form>
+<ul>
+{% for curso in cursos %}
+  <li>
+    {{ curso.nombre }}, {{ curso.comision }}
+  </li>
+{% endfor %}
+</ul>
+{% endblock contenido %}
