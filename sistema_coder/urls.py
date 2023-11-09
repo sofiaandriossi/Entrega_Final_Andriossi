@@ -22,5 +22,5 @@ from control_estudios.views import listar_estudiantes
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("estudios/", include("control_estudios.urls")), #nos permite organizar mejor las url incluiyendo las de control_estudios en "estudios/..."
-    path("", inicio)
+    path("", inicio, name="inicio")
 ]
