@@ -1,0 +1,23 @@
+{% extends "base.html" %} 
+
+{% block titulo %} 
+<title>Lista usuarios</title>
+{% endblock titulo %}
+
+{% block contenido %}
+<h1>
+    Nuestra comunidad
+</h1>
+
+
+<h3> Usuarios registrados </h3>
+<ul> 
+    {% for usuario in usuarios %}
+    <li> 
+        {{ usuario.nombre }}, {{ usuario.apellido }}: {{ usuario.usuario}}
+    </li>
+    {% endfor %}
+</ul>
+
+<a href="{% url 'crear_receta' %}">Unite a nosotros!</a>
+{% endblock contenido %}
