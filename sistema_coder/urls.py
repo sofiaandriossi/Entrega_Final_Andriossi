@@ -17,10 +17,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-from sistema_coder.views import saludar, saludar_con_fecha, saludar_con_html
+from sistema_coder.views import saludar, saludar_con_fecha, inicio
 from control_estudios.views import listar_estudiantes
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("estudios/", include("control_estudios.urls")) #nos permite incluir todas las url de la aplicación control_estudios
-    
+    path("estudios/", include("control_estudios.urls")), #nos permite organizar mejor las url incluiyendo las de control_estudios en "estudios/..."
+    path("", inicio)
 ]
