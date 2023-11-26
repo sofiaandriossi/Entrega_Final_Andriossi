@@ -1,7 +1,9 @@
 {% extends "base.html" %}
 
 {% block contenido %}
-
+<p>
+    <strong>Fecha:</strong> {{object.fecha}}
+</p>
 <p>
  <strong>Nombre:</strong> {{object.nombre}}
 </p>
@@ -17,6 +19,5 @@
 
 <br>
 <a href="{% url 'lista_recetas' %}">Volver lista</a>
-<a href="{% url 'editar_receta' object.id %}">Editar</a>
 
 {% endblock contenido %}

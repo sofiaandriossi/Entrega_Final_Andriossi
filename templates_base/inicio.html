@@ -5,6 +5,13 @@
 {% endblock titulo %}
 
 {% block contenido %}
-<h1>Bienvenidos a {{marca}}</h1>
+{% if user.is_authenticated %}
+<h1>Hola de nuevo {{ user.first_name }}!</h1>
+<div>
+  <img src="{{ user.avatar.imagen.url }}" style="max-width: 300px;">
+</div>
+{% else %}
+<h1>Bienvenido/a a Nutricheff</h1>
+{% endif %}
 <h2 style="color:green;">¡Comer saludable no tiene porque ser complicado!</h2>
 {% endblock contenido %}

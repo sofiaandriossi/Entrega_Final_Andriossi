@@ -44,7 +44,7 @@ class RecetaListView(ListView):
 
 class RecetaCreateView(LoginRequiredMixin, CreateView):
     model = Recetas
-    fields = ('nombre', 'descripcion', 'ingredientes', 'autor')
+    fields = ('fecha', 'nombre', 'descripcion', 'ingredientes', 'autor')
     success_url = reverse_lazy('lista_recetas')
     def form_valid(self, form):
         """If the form is valid, save the associated model."""
