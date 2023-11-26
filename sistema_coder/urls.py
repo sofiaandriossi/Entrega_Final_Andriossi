@@ -18,9 +18,9 @@ from django.contrib import admin
 from django.urls import path, include
 
 from sistema_coder.views import inicio
-from control_recetas.views import listar_recetas, listar_usuarios, crear_receta
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("nutricheff/", include("control_recetas.urls")), #nos permite organizar mejor las url incluiyendo las de recetas
+    path("nutricheff/", include("control_recetas.urls")),
+    path("perfiles/", include("perfiles.urls")),
     path("", inicio, name="inicio")
 ]
