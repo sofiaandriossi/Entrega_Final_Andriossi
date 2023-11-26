@@ -12,16 +12,29 @@
   ¡Hechas por ustedes!
 </h2>
 
-<ul>
-{% for receta in recetas %}
-  <li>
-    {{ receta.nombre }}, {{ receta.descripcion }}
-  </li>
-{% endfor %}
-</ul>
-<br>
+<table class="table">
+  <tbody>
+    <tr>
+      <th>Nombre</th>
+      <th>Descripción</th>
+    </tr>
+    {% for receta in recetas %}
+    <tr>
+      <td>{{ receta.nombre }}</td>
+      <td>{{ receta.descripcion }}</td>
+    <td>
+      <form action="{% url 'eliminar_receta' receta.id %}" method="post">
+        {% csrf_token %}
+        <input type="submit" class="btn btn-link" value="eliminar"/>
+      </form>
+    </td>
+  </tr>
+  {% endfor %}
+  </tbody>
+</table>
+
 <h4 style="color:green;">
-  ¿Estás buscando algo en especial?
+  Buscar por nombre:
 </h4>
 <form action="{% url 'buscar_receta' %}" method="post">
   {% csrf_token %}

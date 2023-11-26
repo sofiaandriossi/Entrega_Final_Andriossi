@@ -115,3 +115,11 @@ def buscar_usuario(request):
             context=contexto,
         )
         return http_response
+    
+
+def eliminar_receta(request, id):
+    receta = Recetas.objects.get(id=id)
+    if request.method == "POST":
+        receta.delete()
+        url_exitosa = reverse('lista_receta')
+        return redirect(url_exitosa)
