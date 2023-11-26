@@ -3,13 +3,12 @@
 {% block contenido %}
 
 <form method="post">
- {% csrf_token %}
- {{ form.as_p }}
- <input type="submit" value="Guardar" />
+  {% csrf_token %}
+  {{ form.as_p }}
+  <input type="submit" value="Guardar" />
 </form>
 
 <br>
 <a href="{% url 'lista_recetas' %}">Volver lista</a>
 
 {% endblock contenido %}
-

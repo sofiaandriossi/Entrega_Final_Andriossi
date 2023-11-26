@@ -21,6 +21,6 @@ from sistema_coder.views import inicio
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("nutricheff/", include("control_recetas.urls")),
-    path("perfiles/", include("perfiles.urls")),
+    path("accounts/", include("perfiles.urls")),
     path("", inicio, name="inicio")
 ]

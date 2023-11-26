@@ -24,9 +24,13 @@
         <nav class="navbar navbar-light bg-light static-top">
             <div class="container">
                 <a class="navbar-brand" href="{% url 'inicio' %}">Inicio</a>
-                <a class="navbar-brand" href="{% url 'lista_usuarios' %}">Usuarios</a>
                 <a class="navbar-brand" href="{% url 'lista_recetas' %}">Recetas</a>
-                <a class="btn btn-primary" href="#signup">INICIAR</a>
+                {% if user.is_authenticated %}
+                <a class="btn btn-success" href="{% url 'logout' %}">Cerrar sesión</a>
+                {% else %}
+                <a class="btn btn-success" href="{% url 'login' %}">Inicio sesión</a>
+                <a class="btn btn-success" href="{% url 'registro' %}">Registro</a>
+                {% endif %}
             </div>
         </nav>
 
